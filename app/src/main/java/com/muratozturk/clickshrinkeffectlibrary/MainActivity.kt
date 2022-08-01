@@ -2,10 +2,18 @@ package com.muratozturk.clickshrinkeffectlibrary
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.muratozturk.click_shrink_effect.applyClickShrink
+import com.muratozturk.clickshrinkeffectlibrary.databinding.ActivityMainBinding
+
+
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.tryButton.applyClickShrink()
     }
 }
