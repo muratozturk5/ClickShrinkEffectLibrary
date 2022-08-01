@@ -5,7 +5,7 @@
 
 ![App Screenshot](https://github.com/muratozturk5/ClickShrinkEffectLibrary/blob/master/Screenshot/shrink.gif)
 
-Basic Kotlin View Click Shrink Effect
+Kotlin View Click Shrink Effect
 
 ## 🛠 Setup
 
