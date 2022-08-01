@@ -34,7 +34,7 @@ dependencies {
 button.applyClickShrink()
 textView.applyClickShrink(shrinkValue = 0.80f, animationDuration = 150L)
 cardView.applyClickShrink(shrinkValue = 0.75f, animationDuration = 150L)
-mageView.applyClickShrink(shrinkValue = 0.50f, animationDuration = 250L)
+imageView.applyClickShrink(shrinkValue = 0.50f, animationDuration = 250L)
 ```
 
 ## 👨 Developed By 
