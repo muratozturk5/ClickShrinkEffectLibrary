@@ -20,7 +20,7 @@ allprojects {
 }
 //app label build.gradle
 dependencies {
-        implementation 'com.github.muratozturk5:ClickShrinkEffectLibrary:1.0.0'
+        implementation 'com.github.muratozturk5:ClickShrinkEffectLibrary:1.1.0'
 
 }
 ```
