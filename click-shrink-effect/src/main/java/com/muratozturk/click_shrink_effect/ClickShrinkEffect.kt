@@ -8,12 +8,11 @@ import android.view.View
 import java.lang.ref.WeakReference
 
 
-private const val SHRINK_VALUE = 0.95f
-private const val DURATION_ANIMATION = 100L
-
-class ClickShrinkEffect(view: View) {
+class ClickShrinkEffect(view: View, shrinkValue: Float, animationDuration: Long) {
 
     private val weakRefView = WeakReference(view)
+    private val _shrinkValue = shrinkValue
+    private val _animationDuration = animationDuration
 
     init {
         if (!view.hasOnClickListeners()) view.setOnClickListener { }
@@ -28,11 +27,11 @@ class ClickShrinkEffect(view: View) {
     }
 
     private fun buildShrinkAnimator(): Animator? {
-        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1f, SHRINK_VALUE)
-        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1f, SHRINK_VALUE)
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1f, _shrinkValue)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1f, _shrinkValue)
         weakRefView.get()?.apply {
             val animator = ObjectAnimator.ofPropertyValuesHolder(this, scaleX, scaleY)
-            animator.duration = DURATION_ANIMATION
+            animator.duration = _animationDuration
             return animator
         }
         return null
@@ -40,19 +39,19 @@ class ClickShrinkEffect(view: View) {
 
 
     private fun buildGrowAnimator(): Animator? {
-        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, SHRINK_VALUE, 1f)
-        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, SHRINK_VALUE, 1f)
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, _shrinkValue, 1f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, _shrinkValue, 1f)
         weakRefView.get()?.apply {
             val animator = ObjectAnimator.ofPropertyValuesHolder(this, scaleX, scaleY)
-            animator.duration = DURATION_ANIMATION
+            animator.duration = _animationDuration
             return animator
         }
         return null
     }
 }
 
-fun View.applyClickShrink(): View {
+fun View.applyClickShrink(shrinkValue: Float = 0.95f, animationDuration: Long = 100L): View {
     return this.apply {
-        ClickShrinkEffect(this)
+        ClickShrinkEffect(this, shrinkValue, animationDuration)
     }
 }
