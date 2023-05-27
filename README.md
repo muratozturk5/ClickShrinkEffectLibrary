@@ -1,6 +1,5 @@
 # Kotlin Click Shrink Effect Library
-
-![](https://vbr.wocr.tk/badge?page_id=click-shrink-effect-android&color=55acb7&logo=Github)
+![](https://komarev.com/ghpvc/?username=click-shrink-effect-android&color=55acb7&style=for-the-badge&logo=Github&label=Views)
 [![](https://jitpack.io/v/muratozturk5/ClickShrinkEffectLibrary.svg)](https://jitpack.io/#muratozturk5/ClickShrinkEffectLibrary)
 [![](https://jitpack.io/v/muratozturk5/ClickShrinkEffectLibrary/month.svg)](https://jitpack.io/#muratozturk5/ClickShrinkEffectLibrary)
 
